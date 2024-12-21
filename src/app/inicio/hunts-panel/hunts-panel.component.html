@@ -1,0 +1,192 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Hunts
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-row *ngIf="cacando" style="padding-top:50px">
+    <ion-col size="1">
+
+    </ion-col>
+    <ion-col size="10" style="justify-items: center;">
+      <div style="width: 100%;height: 100%;border: outset 4px gray;text-align: center;align-content: center;">
+        <ion-row>
+          <ion-col size="12" style="border: outset 4px #be8c29;text-align: center;align-content: center;">
+            Ratos -  Esgoto de Rookgard
+          </ion-col>
+        </ion-row>
+        <ion-row *ngIf="!cacando">
+          <ion-col size="12">
+            <img src="https://oneproducao.blob.core.windows.net/iholdbank/ratcave.webp">
+          </ion-col>
+        </ion-row>
+        <ion-row *ngIf="cacando">
+          <ion-col size="12">
+            <img src="https://oneproducao.blob.core.windows.net/iholdbank/cacandoGif.gif">
+          </ion-col>
+        </ion-row>
+        <!-- <ion-row style="margin-bottom: -25px;">
+          <ion-col size="12" style="border: outset 4px #be8c29;text-align: center;align-content: center;">
+            Monstros
+          </ion-col>
+        </ion-row>
+        <ion-row style="margin-bottom: -45px;">
+          <ion-col size="6" style="left:-27px">
+            <img style="rotate:270deg;transform: scaleX(-1);zoom:1.5" src="https://oneproducao.blob.core.windows.net/iholdbank/Rat.gif">
+          </ion-col>
+          <ion-col size="6" style="left:-27px">
+            <img style="rotate:270deg;transform: scaleX(-1);zoom:1.5" src="https://oneproducao.blob.core.windows.net/iholdbank/Cave_Rat.gif">
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="6">
+            <ion-text style="font-size: 8pt;">
+              Rat
+            </ion-text>
+          </ion-col>
+          <ion-col size="6">
+            <ion-text style="font-size: 8pt;">
+              Cave Rat
+            </ion-text>
+          </ion-col>
+        </ion-row>
+        <ion-row style="margin-top: 10px;">
+          <ion-col size="12" style="border: outset 4px #be8c29;text-align: center;align-content: center;">
+            Saque
+          </ion-col>
+        </ion-row>
+        <ion-row style="margin-bottom: -15px;">
+          <ion-col size="6" style="left:-0">
+            <img style="zoom:1.2" src="https://oneproducao.blob.core.windows.net/iholdbank/Gold_Coin.gif">
+          </ion-col>
+          <ion-col size="6" style="left:-0">
+            <img style="zoom:1.2" src="https://oneproducao.blob.core.windows.net/iholdbank/Cheese.gif">
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="6">
+            <ion-text style="font-size: 8pt;">
+              Gold Coin
+            </ion-text>
+          </ion-col>
+          <ion-col size="6">
+            <ion-text style="font-size: 8pt;">
+              Cheese
+            </ion-text>
+          </ion-col>
+        </ion-row> -->
+        <ion-row style="margin-top: 10px;">
+          <ion-col size="12" style="border: outset 4px #be8c29;text-align: center;align-content: center;">
+            Caçando
+          </ion-col>
+        </ion-row>
+        <ion-row style="justify-content: center;margin-top: 10px;">
+          <div>
+            <p>Tempo restante:</p>
+          </div>
+        </ion-row>
+        <ion-row style="justify-content: center;">
+          {{ expirationCounter }}
+        </ion-row>
+        <!-- <ion-row style="justify-content: center;">
+          <button (click)="startTimer()">Iniciar</button>
+          <button (click)="pauseTimer()">Pausar</button>
+          <button (click)="resetTimer()">Redefinir</button>
+        </ion-row> -->
+        <ion-row style="justify-content: center;">
+          <ion-col>
+            <ion-button (click)="cancelarHunt()">Cancelar Hunt</ion-button>
+          </ion-col>
+          <ion-col>
+            <ion-button (click)="cancelarHunt()">Finalizar Hunt</ion-button>
+          </ion-col>
+        </ion-row>
+      </div>
+
+    </ion-col>
+    <ion-col size="1">
+
+    </ion-col>
+  </ion-row>
+  <ion-row *ngIf="!cacando" style="padding-top:50px">
+    <ion-col size="1">
+
+    </ion-col>
+    <ion-col size="10" style="justify-items: center;">
+      <div style="width: 100%;height: 100%;border: outset 4px gray;text-align: center;align-content: center;">
+        <ion-row>
+          <ion-col size="12" style="border: outset 4px #be8c29;text-align: center;align-content: center;">
+            Ratos -  Esgoto de Rookgard
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="12">
+            <img src="https://oneproducao.blob.core.windows.net/iholdbank/ratcave.webp">
+          </ion-col>
+        </ion-row>
+        <ion-row style="margin-bottom: -25px;">
+          <ion-col size="12" style="border: outset 4px #be8c29;text-align: center;align-content: center;">
+            Monstros
+          </ion-col>
+        </ion-row>
+        <ion-row style="margin-bottom: -45px;">
+          <ion-col size="6" style="left:-27px">
+            <img style="rotate:270deg;transform: scaleX(-1);zoom:1.5" src="https://oneproducao.blob.core.windows.net/iholdbank/Rat.gif">
+          </ion-col>
+          <ion-col size="6" style="left:-27px">
+            <img style="rotate:270deg;transform: scaleX(-1);zoom:1.5" src="https://oneproducao.blob.core.windows.net/iholdbank/Cave_Rat.gif">
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="6">
+            <ion-text style="font-size: 8pt;">
+              Rat
+            </ion-text>
+          </ion-col>
+          <ion-col size="6">
+            <ion-text style="font-size: 8pt;">
+              Cave Rat
+            </ion-text>
+          </ion-col>
+        </ion-row>
+        <ion-row style="margin-top: 10px;">
+          <ion-col size="12" style="border: outset 4px #be8c29;text-align: center;align-content: center;">
+            Saque
+          </ion-col>
+        </ion-row>
+        <ion-row style="margin-bottom: -15px;">
+          <ion-col size="6" style="left:-0">
+            <img style="zoom:1.2" src="https://oneproducao.blob.core.windows.net/iholdbank/Gold_Coin.gif">
+          </ion-col>
+          <ion-col size="6" style="left:-0">
+            <img style="zoom:1.2" src="https://oneproducao.blob.core.windows.net/iholdbank/Cheese.gif">
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="6">
+            <ion-text style="font-size: 8pt;">
+              Gold Coin
+            </ion-text>
+          </ion-col>
+          <ion-col size="6">
+            <ion-text style="font-size: 8pt;">
+              Cheese
+            </ion-text>
+          </ion-col>
+        </ion-row>
+        <ion-row style="margin-top: 10px;">
+          <ion-col (click)="cacar()" size="12" class="alerts-border" style="border: outset 4px #be8c29;text-align: center;align-content: center;">
+            Iniciar
+          </ion-col>
+        </ion-row>
+      </div>
+
+    </ion-col>
+    <ion-col size="1">
+
+    </ion-col>
+  </ion-row>
+</ion-content>

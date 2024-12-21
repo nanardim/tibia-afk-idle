@@ -1,0 +1,37 @@
+.botao-inicio{
+    height: 120px;
+    width: 120px;
+}
+
+.button-solid {
+    --background-activated: transparent;
+    --background-focused: transparent;
+    --background-hover: transparent;
+    --background-activated-opacity: 1;
+    --background-focused-opacity: 1;
+    --background-hover-opacity: 1;
+}
+
+.button-solid {
+    --background: transparent;
+    --color: var(--ion-color-primary-contrast, #fff);
+}
+
+img{
+ height: 90%;
+ width: 90%;
+ margin-bottom: 25%;
+}
+
+ion-button{
+    border-style: outset;
+    border-color: grey;
+    border-radius: 20px;
+    border-width: 4px;
+}
+ion-label{
+    font-size: 9pt;
+}
+.skillsPanelClass{
+    justify-content: center;
+}

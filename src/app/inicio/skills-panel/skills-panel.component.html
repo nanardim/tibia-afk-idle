@@ -1,0 +1,284 @@
+<div style="width: 100%;height: 100%;align-items: center;display: flex;justify-content: center;">
+  <div class="skills-panel" style="justify-content: center;">
+    <div class="skills-header">{{charName}}</div>
+    <div class="section">
+      <ion-row>
+        <ion-col>
+          <ion-icon name="shield-half-outline"></ion-icon>
+          <ion-text>
+            Vocation: {{vocation}}
+          </ion-text>
+        </ion-col>
+      </ion-row>
+    </div>
+    <div class="section">
+      <ion-row>
+        <ion-col>
+          <ion-icon name="home-outline"></ion-icon>
+          <ion-text>
+            Residence: {{residence}}
+          </ion-text>
+        </ion-col>
+      </ion-row>
+    </div>
+    <div class="section">
+      <!-- <ion-row style="padding-top: 0px;">
+        <ion-col>
+          Hit Points
+        </ion-col>
+        <ion-col style="text-align: end;">
+          325
+        </ion-col>
+      </ion-row>
+      <ion-row style="padding-top: 0px;">
+        <ion-col>
+          Mana
+        </ion-col>
+        <ion-col style="text-align: end;">
+          300
+        </ion-col>
+      </ion-row> -->
+      <!-- <div class="skill-row"><span>Soul Points</span><span>100</span></div> -->
+      <!-- <div class="skill-row"><span>Capacity</span><span>18</span></div> -->
+      <!-- <div class="skill-row"><span>Speed</span><span>131</span></div> -->
+      <!-- <div class="skill-row"><span>Food</span><span>00:09</span></div> -->
+    </div>
+    <div class="skills-header">Skills</div>
+    <div class="section" style="margin-bottom: 0px!important;">
+      <div>
+        <div>
+          <ion-row>
+            <ion-col>
+              <ion-text>
+                Level
+              </ion-text>
+            </ion-col>
+            <ion-col style="text-align: end;">
+              <ion-text>
+                {{ level }}
+              </ion-text>
+            </ion-col>
+          </ion-row>
+        </div>
+      </div>
+      <div class="progress">
+        <div class="progress-bar progress-bar-red" role="progressbar" [ngStyle]="{'width': experienciaPercentage }"></div>
+      </div>
+    </div>
+    <div>
+      <ion-row style="padding-top: 0px;">
+        <ion-col>
+          Experience
+        </ion-col>
+        <ion-col style="text-align: end;">
+          {{ expAtualFormatado }} / {{ expLevelFormatado }}
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col style="padding-top: 0px;">
+          XP Gain Rate
+        </ion-col>
+        <ion-col style="text-align: end;padding-top: 0px;">
+          100%
+        </ion-col>
+      </ion-row>
+    </div>
+    <!-- <div class="section">
+      <div class="d-flex align-items-center" style="text-align: center;">
+        <img src="https://oneproducao.blob.core.windows.net/iholdbank/xpboost.png" alt="XP Boost Icon" style="width: 95px;height: 18px;">
+      </div>
+    </div> -->
+    <!-- <div class="section">
+      <div>
+        <ion-row>
+          <ion-col>
+            <ion-text>
+              Stamina
+            </ion-text>
+          </ion-col>
+          <ion-col style="text-align: end;">
+            <ion-text>
+              40:01
+            </ion-text>
+          </ion-col>
+        </ion-row>
+      </div>
+      <div class="progress">
+        <div class="progress-bar progress-bar-green" role="progressbar" style="width: 25%;"></div>
+      </div>
+    </div>
+    <div class="section">
+      <div>
+        <ion-row>
+          <ion-col>
+            <ion-text>
+              Offline Training
+            </ion-text>
+          </ion-col>
+          <ion-col style="text-align: end;">
+            <ion-text>
+              07:36
+            </ion-text>
+          </ion-col>
+        </ion-row>
+      </div>
+      <div class="progress">
+        <div class="progress-bar progress-bar-red" role="progressbar" style="width: 25%;"></div>
+      </div>
+    </div> -->
+    <!-- <div class="section">
+      <div>
+        <ion-row>
+          <ion-col>
+            <ion-text>
+              Magic Level
+            </ion-text>
+          </ion-col>
+          <ion-col style="text-align: end;">
+            <ion-text>
+              40:01
+            </ion-text>
+          </ion-col>
+        </ion-row>
+      </div>
+      <div class="progress">
+        <div class="progress-bar progress-bar-red" role="progressbar" style="width: 25%;"></div>
+      </div>
+    </div> -->
+    <div class="section" style="padding-top: 10px;">
+      <div>
+        <ion-row>
+          <ion-col>
+            <ion-text>
+              Fist Fighting
+            </ion-text>
+          </ion-col>
+          <ion-col style="text-align: end;">
+            <ion-text>
+              {{ fist }}
+            </ion-text>
+          </ion-col>
+        </ion-row>
+      </div>
+      <div class="progress">
+        <div class="progress-bar progress-bar-green" role="progressbar" [ngStyle]="{'width': fistPercentage }"></div>
+      </div>
+    </div>
+    <div class="section">
+      <div>
+        <ion-row>
+          <ion-col>
+            <ion-text>
+              Club Fighting
+            </ion-text>
+          </ion-col>
+          <ion-col style="text-align: end;">
+            <ion-text>
+              {{ club }}
+            </ion-text>
+          </ion-col>
+        </ion-row>
+      </div>
+      <div class="progress">
+        <div class="progress-bar progress-bar-green" role="progressbar" [ngStyle]="{'width': clubPercentage }"></div>
+      </div>
+    </div>
+    <div class="section">
+      <div>
+        <ion-row>
+          <ion-col>
+            <ion-text>
+              Sword Figting
+            </ion-text>
+          </ion-col>
+          <ion-col style="text-align: end;">
+            <ion-text>
+              {{ sword }}
+            </ion-text>
+          </ion-col>
+        </ion-row>
+      </div>
+      <div class="progress">
+        <div class="progress-bar progress-bar-green" role="progressbar" [ngStyle]="{'width': swordPercentage }"></div>
+      </div>
+    </div>
+    <div class="section">
+      <div>
+        <ion-row>
+          <ion-col>
+            <ion-text>
+              Axe Fighting
+            </ion-text>
+          </ion-col>
+          <ion-col style="text-align: end;">
+            <ion-text>
+              {{ axe }}
+            </ion-text>
+          </ion-col>
+        </ion-row>
+      </div>
+      <div class="progress">
+        <div class="progress-bar progress-bar-green" role="progressbar" [ngStyle]="{'width': axePercentage }"></div>
+      </div>
+    </div>
+    <div class="section">
+      <div>
+        <ion-row>
+          <ion-col>
+            <ion-text>
+              Distance Fighting
+            </ion-text>
+          </ion-col>
+          <ion-col style="text-align: end;">
+            <ion-text>
+              {{ distance }}
+            </ion-text>
+          </ion-col>
+        </ion-row>
+      </div>
+      <div class="progress">
+        <div class="progress-bar progress-bar-green" role="progressbar" [ngStyle]="{'width': distancePercentage }"></div>
+      </div>
+    </div>
+    <div class="section">
+      <div>
+        <ion-row>
+          <ion-col>
+            <ion-text>
+              Shielding
+            </ion-text>
+          </ion-col>
+          <ion-col style="text-align: end;">
+            <ion-text>
+              {{ shielding }}
+            </ion-text>
+          </ion-col>
+        </ion-row>
+      </div>
+      <div class="progress">
+        <div class="progress-bar progress-bar-green" role="progressbar" [ngStyle]="{'width': shieldingPercentage }"></div>
+      </div>
+    </div>
+    <!-- <div class="section">
+      <div>Critical Hit:</div>
+      <div class="text-muted">
+        Chance: 0% <br>
+        Extra Damage: 0%
+      </div>
+    </div>
+    <div class="section">
+      <div>Hit Points Leech:</div>
+      <div class="text-muted">
+        Chance: 0% <br>
+        Amount: 0%
+      </div>
+    </div>
+    <div class="section">
+      <div>Mana Leech:</div>
+      <div class="text-muted">
+        Chance: 0% <br>
+        Amount: 0%
+      </div>
+    </div> -->
+  </div>
+</div>
