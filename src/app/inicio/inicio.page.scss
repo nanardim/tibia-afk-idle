@@ -1,6 +1,15 @@
 .botao-inicio{
-    height: 120px;
-    width: 120px;
+    height: 100px;
+    width: 100px;
+}
+#background-content{
+    background: black!important;
+  
+}
+.headerChar{
+    border-radius: 20px;
+    --background:#d18636!important;
+    width: 50%;
 }
 
 .button-solid {
@@ -11,7 +20,12 @@
     --background-focused-opacity: 1;
     --background-hover-opacity: 1;
 }
-
+::ng-deep ion-content{
+    --background:black;
+}
+::ng-deep ion-label{
+    color:white;
+}
 .button-solid {
     --background: transparent;
     --color: var(--ion-color-primary-contrast, #fff);

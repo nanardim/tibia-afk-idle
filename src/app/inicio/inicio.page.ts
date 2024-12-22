@@ -10,7 +10,8 @@ import { EquipmentPanelComponent } from './equipment-panel/equipment-panel.compo
 import { BackpackPanelComponent } from './backpack-panel/backpack-panel.component';
 import { DepotPanelComponent } from './depot-panel/depot-panel.component';
 import { HuntsPanelComponent } from './hunts-panel/hunts-panel.component';
-
+import { HuntDataModel } from './hunts-panel/models/huntDataModel';
+import charJson from '../arquivos-util/char.json';
 
 @Component({
   selector: 'app-inicio',
@@ -19,6 +20,15 @@ import { HuntsPanelComponent } from './hunts-panel/hunts-panel.component';
 })
 export class InicioPage {
 
+  public huntStamp: Date;
+  public huntTimeLeft: number;
+  public huntRatosMortos: number;
+  public huntCaveRatMortos: number;
+  public huntGoldCoins: number;
+  public huntCheese: number;
+  public huntExpAtual: number;
+  public huntLevel: number;
+  interval: any;
   constructor(private ModalController : ModalController) {}
 
   async abrirSkillPanel(){
@@ -72,13 +82,63 @@ export class InicioPage {
     return await modal.present();
   }
   async abrirHuntsPanel(){
-    const modal = await this.ModalController.create({
-      component: HuntsPanelComponent,
-      cssClass: "atualizarCelularModal",
-      componentProps: {
-      },
-    });
+    
+    if(this.huntTimeLeft == null){
+      const modal = await this.ModalController.create({
+        component: HuntsPanelComponent,
+        backdropDismiss: false,
+        cssClass: "atualizarCelularModal",
+        componentProps: {
+        },
+      });
+      modal.onDidDismiss().then((data) => {
+        if(data.data['timeLeft'] == 666.5){
+          charJson[0].Skills.Level = data.data['huntLevel'];
+          charJson[0].Skills.Experiencia = data.data['huntExpAtual'];
+        }
+        else{
+          this.huntTimeLeft=data.data['timeLeft'];
+          this.huntStamp = data.data['huntStamp'];
+          this.huntCaveRatMortos = data.data['huntCaveRatMortos'];
+          this.huntRatosMortos = data.data['huntRatosMortos'];
+          this.huntGoldCoins = data.data['huntGoldCoins'];
+          this.huntCheese = data.data['huntCheese'];
+          this.huntExpAtual = data.data['huntExpAtual'];
+          this.huntLevel = data.data['huntLevel'];
+        }
 
-    return await modal.present();
+      });
+      return await modal.present();
+    }
+    else{
+      const modal = await this.ModalController.create({
+        component: HuntsPanelComponent,
+        cssClass: "atualizarCelularModal",
+        componentProps: {
+          huntTimeLeft: this.huntTimeLeft,
+          huntStamp: this.huntStamp,
+          huntRatosMortos: this.huntRatosMortos,
+          huntCaveRatMortos: this.huntCaveRatMortos,
+          huntGoldCoins: this.huntGoldCoins,
+          huntCheese: this.huntCheese,
+          huntExpAtual: this.huntExpAtual,
+          huntLevel:this.huntLevel
+        },
+      });
+      modal.onDidDismiss().then((data) => {
+        
+        this.huntTimeLeft=data.data['timeLeft'];
+        this.huntStamp = data.data['huntStamp']
+        this.huntCaveRatMortos = data.data['huntCaveRatMortos'];
+        this.huntRatosMortos = data.data['huntRatosMortos'];
+        this.huntGoldCoins = data.data['huntGoldCoins'];
+        this.huntCheese = data.data['huntCheese'];
+        this.huntExpAtual = data.data['huntExpAtual'];
+        this.huntLevel = data.data['huntLevel'];
+      });
+      return await modal.present();
+    }
+
+
   }
 }
