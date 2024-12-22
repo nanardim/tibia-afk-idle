@@ -7,7 +7,19 @@
 ::ng-deep ion-text{
     color:white;
 }
-
+@-webkit-keyframes fadeinout {
+    0%,100% { opacity: 0; }
+    50% { opacity: 1; }
+  }
+  
+@keyframes fadeinout {
+0%,100% { opacity: 0; }
+50% { opacity: 1; }
+}
+.elementToFadeInAndOut {
+    -webkit-animation: fadeinout 5s linear forwards;
+    animation: fadeinout 5s linear forwards;
+}
 .skills-panel {
 background-color: #3a3a3a;
 border: 1px solid #4a4a4a;

@@ -7,7 +7,10 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <span *ngIf="levelUp" style="position: absolute;z-index: 3;top: 18%;"><img src="https://oneproducao.blob.core.windows.net/iholdbank/levelup.gif"></span>
+  <ion-row *ngIf="levelUp" style="justify-content: center;" >
+    <span class="elementToFadeInAndOut" style="position: absolute;z-index: 3;top: 25%;font-size: 20px;"><ion-text>{{levelAvancadoTexto}}</ion-text></span>
+  </ion-row>
+
   <ion-row *ngIf="cacando" style="padding-top:30px">
     <ion-col size="0.5">
 
@@ -17,7 +20,7 @@
         <ion-row>
           <ion-col size="12" style="border: outset 4px #be8c29;text-align: center;align-content: center;">
             <ion-text>
-              Ratos -  Esgoto de Rookgard
+              Rookgard - Rookgard Sewers [1-3]
             </ion-text>
           </ion-col>
         </ion-row>
@@ -84,15 +87,15 @@
         <ion-row style="margin-top: 10px;">
           <ion-col size="12" style="border: outset 4px #be8c29;text-align: center;align-content: center;">
             <ion-text>
-              Caçando
+              Hunting
             </ion-text>
           </ion-col>
         </ion-row>
         <ion-row style="justify-content: center;margin-top: 10px;">
           <div>
-            <p><ion-text>
-              Tempo Restante:
-            </ion-text></p>
+            <ion-text style="font-size: 16px;">
+              Time Remaining
+            </ion-text>
           </div>
         </ion-row>
         <ion-row style="justify-content: center;">
@@ -100,7 +103,7 @@
             {{ expirationCounter }}
           </ion-label>
           <ion-label style="font-size: 18px;margin-bottom: 50px;" *ngIf="!mostrarTempo">
-            Carregando ...
+            Loading ...
           </ion-label>
         </ion-row>
         <div *ngIf="mostrarTempo" class="section" style="margin-bottom: 0px!important;">
@@ -124,7 +127,7 @@
           <ion-row style="padding-top: 0px;margin-bottom:10px;">
             <ion-col style="text-align: start;padding-left: 10px;">
               <ion-text>
-                Experience
+                Experience ({{ experienciaPercentage }})
               </ion-text>
             </ion-col>
             <ion-col style="text-align: end;padding-right: 10px;">
@@ -151,10 +154,29 @@
           <button (click)="pauseTimer()">Pausar</button>
           <button (click)="resetTimer()">Redefinir</button>
         </ion-row> -->
+        <ion-row style="margin-top: 5px;">
+          <ion-col size="12" style="border: outset 4px #be8c29;text-align: center;align-content: center;">
+            <ion-text>
+              Activity
+            </ion-text>
+          </ion-col>
+        </ion-row>
+        <ion-row style="margin-top: 5px;margin-bottom: 12px;">
+          <ion-col size="6" style="text-align: center;align-content: center;">
+            <ion-text>
+              {{textoAtividade}}
+            </ion-text>
+          </ion-col>
+          <ion-col size="6" style="text-align: center;align-content: center;">
+            <ion-text>
+              Loot: {{textoLootAtividade}}
+            </ion-text>
+          </ion-col>
+        </ion-row>
         <ion-row>
           <ion-col size="12" style="border: outset 4px #be8c29;text-align: center;align-content: center;">
             <ion-text>
-              Criaturas Abatidas
+              Creatures Slain
             </ion-text>
           </ion-col>
         </ion-row>
@@ -181,7 +203,7 @@
         <ion-row style="margin-top: 5px;">
           <ion-col size="12" style="border: outset 4px #be8c29;text-align: center;align-content: center;">
             <ion-text>
-              Saque
+              Looted Items
             </ion-text>
           </ion-col>
         </ion-row>
@@ -207,10 +229,10 @@
         </ion-row>
         <ion-row style="justify-content: center;margin-top: 10px;">
           <ion-col (click)="cancelarHunt()" size="6" class="alerts-border" style="border: outset 4px #be8c29;text-align: center;align-content: center;">
-            <ion-text>Voltar</ion-text>
+            <ion-text>Back</ion-text>
           </ion-col>
           <ion-col (click)="cancelarHunt()" size="6" class="alerts-border" style="border: outset 4px #be8c29;text-align: center;align-content: center;">
-            <ion-text>Finalizar Hunt</ion-text>
+            <ion-text>Finish Hunt</ion-text>
           </ion-col>
         </ion-row>
       </div>
@@ -229,7 +251,7 @@
         <ion-row>
           <ion-col size="12" style="border: outset 4px #be8c29;text-align: center;align-content: center;">
             <ion-text>
-              Ratos -  Esgoto de Rookgard
+              Rookgard - Rookgard Sewers [1-3]
             </ion-text>
           </ion-col>
         </ion-row>
@@ -241,7 +263,7 @@
         <ion-row style="margin-bottom: -25px;">
           <ion-col size="12" style="border: outset 4px #be8c29;text-align: center;align-content: center;">
             <ion-text>
-              Monstros
+              Creatures
             </ion-text>
           </ion-col>
         </ion-row>
@@ -295,7 +317,7 @@
         <ion-row style="margin-top: 10px;">
           <ion-col (click)="cacar()" size="12" class="alerts-border" style="border: outset 4px #be8c29;text-align: center;align-content: center;">
             <ion-text>
-              Iniciar
+              Start Hunting
             </ion-text>
           </ion-col>
         </ion-row>
