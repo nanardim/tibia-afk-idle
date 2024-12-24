@@ -208,11 +208,11 @@
           </ion-col>
         </ion-row>
         <ion-row style="margin-bottom: -15px;">
-          <ion-col size="6" style="left:-0">
+          <ion-col size="6" style="left:-0;height: 53px;">
             <img style="zoom:1.2" src="https://oneproducao.blob.core.windows.net/iholdbank/Gold_Coin.gif"> <ion-text style="margin-left: 5px;">X {{goldCoins}}</ion-text> 
           </ion-col>
-          <ion-col size="6" style="left:-0">
-            <img style="zoom:1.2" src="https://oneproducao.blob.core.windows.net/iholdbank/Cheese.gif"> <ion-text style="margin-left: 5px;">X {{cheese}} </ion-text>
+          <ion-col size="6" style="left:-0;justify-items: center;height: 53px;">
+            <ion-img (click)="abrirBackpackPanel()" style="width: 40px;height: 40px;" src="https://oneproducao.blob.core.windows.net/iholdbank/Backpack.gif"></ion-img> <ion-text style="margin-left: 5px;"> </ion-text>
           </ion-col>
         </ion-row>
         <ion-row>
@@ -223,7 +223,7 @@
           </ion-col>
           <ion-col size="6">
             <ion-text style="font-size: 8pt;">
-              Cheese
+              Backpack
             </ion-text>
           </ion-col>
         </ion-row>

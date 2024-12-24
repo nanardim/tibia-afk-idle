@@ -3,6 +3,7 @@ import { ModalController } from '@ionic/angular';
 import { HuntDataModel } from './models/huntDataModel';
 import charJson from '../../arquivos-util/char.json';
 import json from '../../arquivos-util/tabela-level.json';
+import { BackpackPanelComponent } from '../backpack-panel/backpack-panel.component';
 
 @Component({
   selector: 'app-hunts-panel',
@@ -104,7 +105,16 @@ export class HuntsPanelComponent  implements OnInit {
       this.mostrarTempo = true;
     }, 2000);
   }
+  async abrirBackpackPanel(){
+    const modal = await this.modalController.create({
+      component: BackpackPanelComponent,
+      cssClass: "atualizarCelularModal",
+      componentProps: {
+      },
+    });
 
+    return await modal.present();
+  }
   //FUNCAO PRINCIPAL
   startTimer() {
     this.interval = setInterval(() => {

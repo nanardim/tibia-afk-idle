@@ -1,0 +1,24 @@
+[
+    {
+        "Name":"Rookgard Sewers [1-3]",
+        "Location": "Rookgard",
+        "Image":"https://oneproducao.blob.core.windows.net/iholdbank/ratcave.webp",
+        "Creature1":{
+            "Name":"Rat",
+            "Exp":5,
+            "GoldMin":1,
+            "GoldMax":2,
+            "Loot":["1:9300", "2:200", "3:200", "4:200", "5:45", "6:45", "7:5"]
+        },
+        "Creature2":{
+            "Name":"Cave Rat",
+            "Exp":10,
+            "GoldMin":1,
+            "GoldMax":3,
+            "Loot":["1:9000", "2:250", "3:250", "4:250", "5:100", "6:100", "7:50"]
+        }
+
+
+
+    }
+]

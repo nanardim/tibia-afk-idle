@@ -1,0 +1,72 @@
+[
+    {
+        "ID": "1",
+        "Nome": "Cheese",
+        "Img": "https://oneproducao.blob.core.windows.net/iholdbank/Cheese.gif",
+        "Rarity": "white",
+        "Price": "3",
+        "Atk": "0",
+        "Def": "0",
+        "Armor": "0"
+    },
+    {
+        "ID": "2",
+        "Nome": "Studded Club",
+        "Img": "https://oneproducao.blob.core.windows.net/iholdbank/Club.gif",
+        "Rarity": "green",
+        "Price": "9",
+        "Atk": "9",
+        "Def": "9",
+        "Armor": "0"
+    },
+    {
+        "ID": "3",
+        "Nome": "Rapier",
+        "Img": "https://oneproducao.blob.core.windows.net/iholdbank/Rapier.gif",
+        "Rarity": "green",
+        "Price": "10",
+        "Atk": "8",
+        "Def": "8",
+        "Armor": "0"
+    },
+    {
+        "ID": "4",
+        "Nome": "Axe",
+        "Img": "https://oneproducao.blob.core.windows.net/iholdbank/Axe.gif",
+        "Rarity": "green",
+        "Price": "12",
+        "Atk": "6",
+        "Def": "0",
+        "Armor": "0"
+    },
+    {
+        "ID": "5",
+        "Nome": "Leather Boots",
+        "Img": "https://oneproducao.blob.core.windows.net/iholdbank/Leather_Boots.gif",
+        "Rarity": "green",
+        "Price": "5",
+        "Atk": "0",
+        "Def": "0",
+        "Armor": "1"
+    },
+    {
+        "ID": "6",
+        "Nome": "Leather Helmet",
+        "Img": "https://oneproducao.blob.core.windows.net/iholdbank/Leather_Helmet.gif",
+        "Rarity": "green",
+        "Price": "5",
+        "Atk": "0",
+        "Def": "0",
+        "Armor": "1"
+    },
+    {
+        "ID": "7",
+        "Nome": "Rat Doll",
+        "Img": "https://oneproducao.blob.core.windows.net/iholdbank/Rat_Doll.gif",
+        "Rarity": "blue",
+        "Price": "50",
+        "Atk": "0",
+        "Def": "0",
+        "Armor": "0"
+    }
+]
